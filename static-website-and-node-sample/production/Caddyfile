@@ -1,0 +1,6 @@
+exemple.com {
+}
+
+api.exemple.com {
+  proxy /  api:3000
+}

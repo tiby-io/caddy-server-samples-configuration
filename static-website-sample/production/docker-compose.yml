@@ -1,0 +1,12 @@
+version: "2"
+services:
+  server:
+    image: abiosoft/caddy
+    container_name: caddy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./Caddyfile:/etc/Caddyfile"
+      - "./src:/srv"
+      - "./caddy:/root/.caddy"

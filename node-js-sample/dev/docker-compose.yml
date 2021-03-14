@@ -1,0 +1,17 @@
+version: "2"
+services:
+  api:
+    build: ./api
+    container_name: "node-api"
+    restart: always
+    ports:
+      - "3000:3000"
+  server:
+    image: abiosoft/caddy
+    container_name: caddy
+    ports:
+      - "80:80"
+    links:
+      - api
+    volumes:
+      - "./Caddyfile:/etc/Caddyfile"
